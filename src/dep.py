@@ -1,9 +1,9 @@
 import random
 
-def mcls():
+def mcls(): # 2 lines down
     print("\n" * 2)
 
-def chooseLang():
+def chooseLang(): #choose language to use in software
     print("        Language | Linguagem        ")
     print("------------------------------------")
     print("- ( 1 ) English   (EN-US)          -")
@@ -11,19 +11,19 @@ def chooseLang():
     print("- ( 2 ) Português (PT-BR)          -")
     print("------------------------------------")
 
-def menuEn():
+def menuEn(): #Tool menu in english
     print("               TOOLS                ")
     print("------------------------------------")
     print("- ( 1 ) Password Generator         -")
     print("------------------------------------")
 
-def menuPt():
+def menuPt(): #Tool menu in portuguese
     print("            FERRAMENTAS             ")
     print("------------------------------------")
     print("- ( 1 ) Gerador de Senha Segura    -")
     print("------------------------------------")
 
-def genPassHardUS(size):
+def genPassHardUS(size): #function to generate the password (english language)
 
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     specialAlphabet = "!@#$"
@@ -43,15 +43,14 @@ def genPassHardUS(size):
     pwString = "".join(pwList)
 
     print("Your password is:" , pwString)
-    choiceGenPassSoft = input("\nDo you want to save it to a file? (y/n): ")
+    choiceGenPassSoft = input("\nDo you want to save it to a file? (Y/N): ")
     if (choiceGenPassSoft == "y"):
-        texto = (pwString)
         nameText = input("Name of new file: ")
         if (nameText == ""):
             nameText = ("Password")
 
         nameFile = open(nameText + ".txt", "w")
-        nameFile.write("Your password is: " + pwString)
+        nameFile.write("Your password: " + pwString)
         nameFile.close()
 
         input("\nPress ENTER to close this window...")
@@ -61,7 +60,7 @@ def genPassHardUS(size):
 
         input("\nPress ENTER to close this window...")
 
-def genPassHardBR(size):
+def genPassHardBR(size): #function to generate the password (portuguese language)
 
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     specialAlphabet = "!@#$"
@@ -83,7 +82,6 @@ def genPassHardBR(size):
     print("Sua senha é:" , pwString)
     choiceGenPassSoft = input("\nVocê deseja salvar a senha em um novo arquivo? (S/N): ")
     if (choiceGenPassSoft == "s"):
-        texto = (pwString)
         nameText = input("Nome do novo arquivo: ")
         if (nameText == ""):
             nameText = ("Senha")
