@@ -1,11 +1,13 @@
 import dep  # Import file "dep" (dependencies)
 
-print("\nMonSec v0.1.1 [Monteiro Innovation - 2018]\n")
+print("\nMonSec v0.2.0 [Monteiro Innovation - 2018]\n")
 
 rpt = True  # var for exception handling
 
 dep.chooseLang()
 mainLang = input("Language: ")
+
+# ------------------ ENGLISH ------------------
 
 if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
     dep.mcls()
@@ -22,6 +24,19 @@ if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
             except:
                 print("Invalid value! Type just NUMBERS.")
 
+    if (mainOpt == '2'):
+        dep.mcls()
+        dep.genHashFileMenu()
+        hashGenOpt = input("Choose an option: ")
+
+        if (hashGenOpt == '1'):
+            dep.genHashFileTxtSHA256US()
+
+        if (hashGenOpt == '2'):
+            dep.genHashFileTxtMD5US()
+
+# ------------------ PORTUGUESE ------------------
+
 if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
     dep.mcls()
     dep.menuPt()
@@ -36,3 +51,15 @@ if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
                 rpt = False
             except:
                 print("Valor inválido! Digite apenas NÚMEROS.")
+
+
+    if (mainOpt == '2'):
+        dep.mcls()
+        dep.genHashFileMenu()
+        hashGenOpt = input("Escolha uma opção: ")
+
+        if (hashGenOpt == '1'):
+            dep.genHashFileTxtSHA256BR()
+
+        if (hashGenOpt == '2'):
+            dep.genHashFileTxtMD5BR()

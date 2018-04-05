@@ -1,4 +1,5 @@
 import random
+import hashlib
 
 def mcls(): # 2 lines down
     print("\n" * 2)
@@ -15,12 +16,14 @@ def menuEn(): #Tool menu in english
     print("               TOOLS                ")
     print("------------------------------------")
     print("- ( 1 ) Password Generator         -")
+    print("- ( 2 ) Hash Generator (TEXT)      -")
     print("------------------------------------")
 
 def menuPt(): #Tool menu in portuguese
     print("            FERRAMENTAS             ")
     print("------------------------------------")
     print("- ( 1 ) Gerador de Senha Segura    -")
+    print("- ( 2 ) Gerador de Hash (TEXTO)    -")
     print("------------------------------------")
 
 def genPassHardUS(size): #function to generate the password (english language)
@@ -96,3 +99,36 @@ def genPassHardBR(size): #function to generate the password (portuguese language
         print("Tudo bem!")
 
         input("\nPressione ENTER para fechar a janela...")
+
+def genHashFileMenu():
+    print("------------------------------------")
+    print("- ( 1 ) SHA-256                    -")
+    print("- ( 2 ) MD5                        -")
+    print("------------------------------------")
+
+def genHashFileTxtSHA256BR():
+    message = input("\ndigite o texto: ")
+    m = hashlib.sha256(message.encode('utf-8')).hexdigest()
+    print("resultado (SHA-256): ", m)
+    input("\nPressione ENTER para fechar a janela...")
+
+def genHashFileTxtMD5BR():
+    message = input("\ndigite o texto: ")
+    m = hashlib.md5(message.encode('utf-8')).hexdigest()
+    print("resultado (MD5): ", m)
+    input("\nPressione ENTER para fechar a janela...")
+
+
+
+
+def genHashFileTxtSHA256US():
+    message = input("\ntype your text: ")
+    m = hashlib.sha256(message.encode('utf-8')).hexdigest()
+    print("result (SHA-256): ", m)
+    input("\nPress ENTER to close this window...")
+
+def genHashFileTxtMD5US():
+    message = input("\ntype your text: ")
+    m = hashlib.md5(message.encode('utf-8')).hexdigest()
+    print("result (MD5): ", m)
+    input("\nPress ENTER to close this window...")
