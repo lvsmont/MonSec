@@ -17,6 +17,7 @@ def menuEn(): #Tool menu in english
     print("------------------------------------")
     print("- ( 1 ) Password Generator         -")
     print("- ( 2 ) Hash Generator (TEXT)      -")
+    print("- ( 3 ) Hash Generator (FILE)      -")
     print("------------------------------------")
 
 def menuPt(): #Tool menu in portuguese
@@ -24,6 +25,7 @@ def menuPt(): #Tool menu in portuguese
     print("------------------------------------")
     print("- ( 1 ) Gerador de Senha Segura    -")
     print("- ( 2 ) Gerador de Hash (TEXTO)    -")
+    print("- ( 3 ) Gerador de Hash (ARQUIVO)  -")
     print("------------------------------------")
 
 def genPassHardUS(size): #function to generate the password (english language)
@@ -100,35 +102,91 @@ def genPassHardBR(size): #function to generate the password (portuguese language
 
         input("\nPressione ENTER para fechar a janela...")
 
-def genHashFileMenu():
+
+
+def genHashMenu():
     print("------------------------------------")
     print("- ( 1 ) SHA-256                    -")
     print("- ( 2 ) MD5                        -")
     print("------------------------------------")
 
-def genHashFileTxtSHA256BR():
+
+def genHashTxtSHA256BR(): #function to generate the TEXT hash (SHA-256)  (portuguese language)
     message = input("\ndigite o texto: ")
     m = hashlib.sha256(message.encode('utf-8')).hexdigest()
     print("resultado (SHA-256): ", m)
     input("\nPressione ENTER para fechar a janela...")
 
-def genHashFileTxtMD5BR():
+def genHashTxtMD5BR(): #function to generate the TEXT hash (MD5)  (portuguese language)
     message = input("\ndigite o texto: ")
     m = hashlib.md5(message.encode('utf-8')).hexdigest()
     print("resultado (MD5): ", m)
     input("\nPressione ENTER para fechar a janela...")
 
 
+def genHashFileSHA256BR(): #function to generate the FILE hash (SHA-256)  (portuguese language)
+    hashNameFile = input ("Digite o nome do arquivo desejado (com a extensão do arquivo): ")
+
+    blockSize = 65536   # 2^16
+    hasher = hashlib.sha256()
+    with open(hashNameFile, 'rb') as afile:
+        buf = afile.read(blockSize)
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = afile.read(blockSize)
+    print("resultado (SHA-256): " + hasher.hexdigest())
+    input("\nPressione ENTER para fechar a janela...")
+
+def genHashFileMD5BR(): #function to generate the FILE hash (MD5)  (portuguese language)
+    hashNameFile = input ("Digite o nome do arquivo desejado (com a extensão do arquivo): ")
+
+    blockSize = 65536   # 2^16
+    hasher = hashlib.md5()
+    with open(hashNameFile, 'rb') as afile:
+        buf = afile.read(blockSize)
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = afile.read(blockSize)
+    print("resultado (MD5): " + hasher.hexdigest())
+    input("\nPressione ENTER para fechar a janela...")
 
 
-def genHashFileTxtSHA256US():
+
+
+def genHashTxtSHA256US(): #function to generate the TEXT hash (SHA-256)  (english language)
     message = input("\ntype your text: ")
     m = hashlib.sha256(message.encode('utf-8')).hexdigest()
     print("result (SHA-256): ", m)
     input("\nPress ENTER to close this window...")
 
-def genHashFileTxtMD5US():
+def genHashTxtMD5US(): #function to generate the TEXT hash (MD5)  (english language)
     message = input("\ntype your text: ")
     m = hashlib.md5(message.encode('utf-8')).hexdigest()
     print("result (MD5): ", m)
+    input("\nPress ENTER to close this window...")
+
+def genHashFileSHA256US(): #function to generate the FILE hash (SHA-256)  (english language)
+    hashNameFile = input ("Type the file name (with the file extension): ")
+
+    blockSize = 65536   # 2^16
+    hasher = hashlib.sha256()
+    with open(hashNameFile, 'rb') as afile:
+        buf = afile.read(blockSize)
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = afile.read(blockSize)
+    print("result (SHA-256): " + hasher.hexdigest())
+    input("\nPress ENTER to close this window...")
+
+def genHashFileMD5US(): #function to generate the FILE hash (MD5)  (english language)
+    hashNameFile = input ("Type the file name (with the file extension): ")
+
+    blockSize = 65536   # 2^16
+    hasher = hashlib.md5()
+    with open(hashNameFile, 'rb') as afile:
+        buf = afile.read(blockSize)
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = afile.read(blockSize)
+    print("result (MD5): " + hasher.hexdigest())
     input("\nPress ENTER to close this window...")

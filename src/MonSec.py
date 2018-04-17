@@ -1,6 +1,6 @@
 import dep  # Import file "dep" (dependencies)
 
-print("\nMonSec v0.2.0 [Monteiro Innovation - 2018]\n")
+print("\nMonSec v0.3.0 [Monteiro Innovation - 2018]\n")
 
 rpt = True  # var for exception handling
 
@@ -26,14 +26,35 @@ if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
 
     if (mainOpt == '2'):
         dep.mcls()
-        dep.genHashFileMenu()
+        dep.genHashMenu()
         hashGenOpt = input("Choose an option: ")
 
         if (hashGenOpt == '1'):
-            dep.genHashFileTxtSHA256US()
+            dep.genHashTxtSHA256US()
 
         if (hashGenOpt == '2'):
-            dep.genHashFileTxtMD5US()
+            dep.genHashTxtMD5US()
+
+    if (mainOpt == '3'):
+        dep.mcls()
+        dep.genHashMenu()
+        hashGenOpt = input("Choose an option: ")
+
+        if (hashGenOpt == '1'):
+            while (rpt == True):
+                try:
+                    dep.genHashFileSHA256US()
+                    rpt = False
+                except:
+                    print ("File not found! Try again...\n")
+
+        if (hashGenOpt == '2'):
+            while (rpt == True):
+                try:
+                    dep.genHashFileMD5US()
+                    rpt = False
+                except:
+                    print ("File not found! Try again...\n")
 
 # ------------------ PORTUGUESE ------------------
 
@@ -55,11 +76,32 @@ if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
 
     if (mainOpt == '2'):
         dep.mcls()
-        dep.genHashFileMenu()
+        dep.genHashMenu()
         hashGenOpt = input("Escolha uma opção: ")
 
         if (hashGenOpt == '1'):
-            dep.genHashFileTxtSHA256BR()
+            dep.genHashTxtSHA256BR()
 
         if (hashGenOpt == '2'):
-            dep.genHashFileTxtMD5BR()
+            dep.genHashTxtMD5BR()
+
+    if (mainOpt == '3'):
+        dep.mcls()
+        dep.genHashMenu()
+        hashGenOpt = input("Escolha uma opção: ")
+
+        if (hashGenOpt == '1'):
+            while (rpt == True):
+                try:
+                    dep.genHashFileSHA256BR()
+                    rpt = False
+                except:
+                    print ("Arquivo não encontrado! Tente novamente...\n")
+
+        if (hashGenOpt == '2'):
+            while (rpt == True):
+                try:
+                    dep.genHashFileMD5BR()
+                    rpt = False
+                except:
+                    print ("Arquivo não encontrado! Tente novamente...\n")

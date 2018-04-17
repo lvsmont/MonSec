@@ -1,4 +1,4 @@
-# MonSec (v0.2.0) 
+# MonSec (v0.3.0) 
 > Tools for personal data security.
 
 
@@ -12,7 +12,7 @@ Tool | Available?
 ------------ | -------------
 Strong password generator | **YES**
 Encrypt/Decrypt files | Working...
-Hash generator | **50%**
+Hash generator | **YES**
 Hash compare | Working...
 
 #### Download latest release [here!](https://github.com/lvsmont/MonSec/releases/latest)
