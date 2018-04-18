@@ -1,20 +1,24 @@
-import dep  # Import file "dep" (dependencies)
+import dep  # Import file "dep.py" (dependencies)
+import menus # Import file "menus.py"
 
 print("\nMonSec v0.3.0 [Monteiro Innovation - 2018]\n")
 
 rpt = True  # var for exception handling
 
-dep.chooseLang()
+menus.chooseLang()
 mainLang = input("Language: ")
 
-# ------------------ ENGLISH ------------------
 
+
+
+# ------------------ ENGLISH ------------------
 if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
     dep.mcls()
-    dep.menuEn()
+    menus.menuEn()
 
     mainOpt = input("\nChoose an option: ")
 
+    #Password Generator
     if (mainOpt == '1'):
         while (rpt == True):
             try:
@@ -24,9 +28,10 @@ if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
             except:
                 print("Invalid value! Type just NUMBERS.")
 
+    #Hash Generator (TEXT)
     if (mainOpt == '2'):
         dep.mcls()
-        dep.genHashMenu()
+        menus.genHashMenu()
         hashGenOpt = input("Choose an option: ")
 
         if (hashGenOpt == '1'):
@@ -35,9 +40,10 @@ if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
         if (hashGenOpt == '2'):
             dep.genHashTxtMD5US()
 
+    #Hash Generator (FILE)
     if (mainOpt == '3'):
         dep.mcls()
-        dep.genHashMenu()
+        menus.genHashMenu()
         hashGenOpt = input("Choose an option: ")
 
         if (hashGenOpt == '1'):
@@ -46,7 +52,7 @@ if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
                     dep.genHashFileSHA256US()
                     rpt = False
                 except:
-                    print ("File not found! Try again...\n")
+                    print("File not found! Try again...\n")
 
         if (hashGenOpt == '2'):
             while (rpt == True):
@@ -54,16 +60,19 @@ if (mainLang == "en-us" or mainLang == "en" or mainLang == "1"):
                     dep.genHashFileMD5US()
                     rpt = False
                 except:
-                    print ("File not found! Try again...\n")
+                    print("File not found! Try again...\n")
+
+
+
 
 # ------------------ PORTUGUESE ------------------
-
 if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
     dep.mcls()
-    dep.menuPt()
+    menus.menuPt()
 
     mainOpt = input("\nEscolha uma opção: ")
 
+    #Password Generator
     if (mainOpt == '1'):
         while (rpt == True):
             try:
@@ -73,10 +82,10 @@ if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
             except:
                 print("Valor inválido! Digite apenas NÚMEROS.")
 
-
+    #Hash Generator (TEXT)
     if (mainOpt == '2'):
         dep.mcls()
-        dep.genHashMenu()
+        menus.genHashMenu()
         hashGenOpt = input("Escolha uma opção: ")
 
         if (hashGenOpt == '1'):
@@ -85,9 +94,10 @@ if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
         if (hashGenOpt == '2'):
             dep.genHashTxtMD5BR()
 
+    #Hash Generator (FILE)
     if (mainOpt == '3'):
         dep.mcls()
-        dep.genHashMenu()
+        menus.genHashMenu()
         hashGenOpt = input("Escolha uma opção: ")
 
         if (hashGenOpt == '1'):
@@ -96,7 +106,7 @@ if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
                     dep.genHashFileSHA256BR()
                     rpt = False
                 except:
-                    print ("Arquivo não encontrado! Tente novamente...\n")
+                    print("Arquivo não encontrado! Tente novamente...\n")
 
         if (hashGenOpt == '2'):
             while (rpt == True):
@@ -104,4 +114,4 @@ if (mainLang == "pt-br" or mainLang == "pt" or mainLang == "2"):
                     dep.genHashFileMD5BR()
                     rpt = False
                 except:
-                    print ("Arquivo não encontrado! Tente novamente...\n")
+                    print("Arquivo não encontrado! Tente novamente...\n")
