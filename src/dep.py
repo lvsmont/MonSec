@@ -1,5 +1,6 @@
 import random
 import hashlib
+import pyperclip
 
 def mcls(): # 2 lines down
     print("\n" * 2)
@@ -91,13 +92,17 @@ def genPassHardBR(size): #function to generate the password (portuguese language
 def genHashTxtSHA256US(): #function to generate the TEXT hash (SHA-256)  (english language)
     message = input("\ntype your text: ")
     m = hashlib.sha256(message.encode('utf-8')).hexdigest()
-    print("result (SHA-256): ", m)
+    print("\nresult (SHA-256): ", m)
+    pyperclip.copy(m)
+    print("Hash copied to clipboard!")
     input("\nPress ENTER to close this window...")
 
 def genHashTxtMD5US(): #function to generate the TEXT hash (MD5)  (english language)
     message = input("\ntype your text: ")
     m = hashlib.md5(message.encode('utf-8')).hexdigest()
-    print("result (MD5): ", m)
+    print("\nresult (MD5): ", m)
+    pyperclip.copy(m)
+    print("Hash copied to clipboard!")
     input("\nPress ENTER to close this window...")
 
 def genHashFileSHA256US(): #function to generate the FILE hash (SHA-256)  (english language)
@@ -109,7 +114,9 @@ def genHashFileSHA256US(): #function to generate the FILE hash (SHA-256)  (engli
         while len(buf) > 0:
             hasher.update(buf)
             buf = afile.read(blockSize)
-    print("result (SHA-256): " + hasher.hexdigest())
+    print("\nresult (SHA-256): " + hasher.hexdigest())
+    pyperclip.copy(hasher.hexdigest())
+    print("Hash copied to clipboard!")
     input("\nPress ENTER to close this window...")
 
 def genHashFileMD5US(): #function to generate the FILE hash (MD5)  (english language)
@@ -121,7 +128,9 @@ def genHashFileMD5US(): #function to generate the FILE hash (MD5)  (english lang
         while len(buf) > 0:
             hasher.update(buf)
             buf = afile.read(blockSize)
-    print("result (MD5): " + hasher.hexdigest())
+    print("\nresult (MD5): " + hasher.hexdigest())
+    pyperclip.copy(hasher.hexdigest())
+    print("Hash copied to clipboard!")
     input("\nPress ENTER to close this window...")
 
 
@@ -131,15 +140,18 @@ def genHashFileMD5US(): #function to generate the FILE hash (MD5)  (english lang
 def genHashTxtSHA256BR(): #function to generate the TEXT hash (SHA-256)  (portuguese language)
     message = input("\ndigite o texto: ")
     m = hashlib.sha256(message.encode('utf-8')).hexdigest()
-    print("resultado (SHA-256): ", m)
+    print("\nresultado (SHA-256): ", m)
+    pyperclip.copy(m)
+    print("Hash copiada para o clipboard!")
     input("\nPressione ENTER para fechar a janela...")
 
 def genHashTxtMD5BR(): #function to generate the TEXT hash (MD5)  (portuguese language)
     message = input("\ndigite o texto: ")
     m = hashlib.md5(message.encode('utf-8')).hexdigest()
-    print("resultado (MD5): ", m)
+    print("\nresultado (MD5): ", m)
+    pyperclip.copy(m)
+    print("Hash copiada para o clipboard!")
     input("\nPressione ENTER para fechar a janela...")
-
 
 def genHashFileSHA256BR(): #function to generate the FILE hash (SHA-256)  (portuguese language)
     hashNameFile = input ("Digite o nome do arquivo desejado (com a extensão do arquivo): ")
@@ -150,9 +162,10 @@ def genHashFileSHA256BR(): #function to generate the FILE hash (SHA-256)  (portu
         while len(buf) > 0:
             hasher.update(buf)
             buf = afile.read(blockSize)
-    print("resultado (SHA-256): " + hasher.hexdigest())
+    print("\nresultado (SHA-256): " + hasher.hexdigest())
+    pyperclip.copy(hasher.hexdigest())
+    print("Hash copiada para o clipboard!")
     input("\nPressione ENTER para fechar a janela...")
-
 
 def genHashFileMD5BR(): #function to generate the FILE hash (MD5)  (portuguese language)
     hashNameFile = input ("Digite o nome do arquivo desejado (com a extensão do arquivo): ")
@@ -163,5 +176,7 @@ def genHashFileMD5BR(): #function to generate the FILE hash (MD5)  (portuguese l
         while len(buf) > 0:
             hasher.update(buf)
             buf = afile.read(blockSize)
-    print("resultado (MD5): " + hasher.hexdigest())
+    print("\nresultado (MD5): " + hasher.hexdigest())
+    pyperclip.copy(hasher.hexdigest())
+    print("Hash copiada para o clipboard!")
     input("\nPressione ENTER para fechar a janela...")
