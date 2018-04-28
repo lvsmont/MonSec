@@ -1,7 +1,7 @@
 import dep  # Import file "dep.py" (dependencies)
 import menus # Import file "menus.py"
 
-print("\nMonSec v0.3.0 [Monteiro Innovation - 2018]\n")
+print("\nMonSec v0.3.1 [Monteiro Innovation - 2018]\n")
 
 rpt = True  # var for exception handling
 
